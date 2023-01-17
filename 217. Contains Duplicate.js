@@ -1,3 +1,5 @@
+// USING MAP
+
 /**
  * @param {number[]} nums
  * @return {boolean}
@@ -10,6 +12,19 @@
     }
     return false;
 };
+
+
+// USING SET
+
+/**
+ * @param {number[]} nums
+ * @return {boolean}
+ */
+var containsDuplicate = function(nums) {
+    let arraySet = new Set(nums);
+    return arraySet.size !== nums.length;
+};
+
 
 console.log(containsDuplicate([1,2,3,1]))   // true
 console.log(containsDuplicate([1,2,3,4]))   // false
