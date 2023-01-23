@@ -5,18 +5,17 @@
  var generate = function(numRows) {
     let allRows = [];
     for (let i=0; i<numRows; i++) {
-        let currentRow = [];
+        let currRow = [];
         for (let j=0; j<=i; j++) {
-            if (j === 0 || j=== i) {
-                currentRow.push(1);
+            if(j===0 || j=== i) {
+                currRow.push(1);
                 continue;
-            }
-            const prevRow = allRows[allRows.length -1];
-            const currentElement = prevRow[j-1]+ prevRow[j];
-            currentRow.push(currentElement);
+            } 
+            currRow.push((allRows[i-1][j-1] + allRows[i-1][j]));
         }
-        allRows.push(currentRow);
+        allRows.push(currRow);
     }
+
     return allRows;
 };
 
